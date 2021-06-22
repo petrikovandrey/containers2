@@ -6,6 +6,10 @@
        "jest": true
     },
     "rules": {
+      "class-methods-use-this":"off",
+      "import/prefer-default-export": "off",
+      "no-console": "off",
+      "linebreak-style": 0,
       "no-restricted-syntax": [
         "error",
         "LabeledStatement",
