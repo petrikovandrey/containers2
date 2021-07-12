@@ -12,9 +12,10 @@ test('add Team', () => {
 test('duble add', () => {
   const character = new index.Character('Gena');
   const team = new index.Team();
-  const expected = 'Персонаж уже добавлен';
   team.add(character);
-  expect(team.add(character)).toBe(expected);
+  expect(() => {
+    team.add(character);
+  }).toThrow();
 });
 test('addAll Team', () => {
   const gena = new index.Character('Gena');
@@ -36,8 +37,9 @@ test('to Array', () => {
   const expected = [];
   expect(result).toEqual(expected);
 });
-// test('new Character', () => {
-//   const result = new index.Character('Pit');
-//   const expected = { health: 100, level: 1, name: 'Pit' };
-//   expect(result).toEqual(expected);
-// });
+
+test('new Character', () => {
+  const result = new index.Character('Pit');
+  const expected = { health: 100, level: 1, name: 'Pit' };
+  expect(result).toEqual(expected);
+});

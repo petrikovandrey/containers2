@@ -5,7 +5,7 @@ class Team {
 
   add(character) {
     if (this.members.has(character)) {
-      return new Error('Персонаж уже добавлен');
+      throw new Error('Персонаж уже добавлен');
     }
     this.members.add(character);
     return this;
@@ -21,5 +21,11 @@ class Team {
     return Array.from(mySet);
   }
 }
-
-export { Team };
+class Character {
+  constructor(name) {
+    this.name = name;
+    this.health = 100;
+    this.level = 1;
+  }
+}
+export { Character, Team };
